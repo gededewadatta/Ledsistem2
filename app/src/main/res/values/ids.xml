@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="txt_user" type="id">int</item>
+    <item name="name" type="id">String</item>
+    <item name="btn_save" type="id">int</item>
+</resources>

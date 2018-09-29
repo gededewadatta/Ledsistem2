@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "208326624129",
+    "firebase_url": "https://ledsistem-b9673.firebaseio.com",
+    "project_id": "ledsistem-b9673",
+    "storage_bucket": "ledsistem-b9673.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208326624129:android:51ecddf2f5ed3a20",
+        "android_client_info": {
+          "package_name": "com.example.a48900.ledsistem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208326624129-sjhtg45dgq9lli5v9a08mm2sa6c8io52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMB2flXVc-NEXdohct07MxPYpZNMKyAYQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
