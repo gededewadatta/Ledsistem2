@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.a48900.ledsistem.Model.PendingQuestion;
 import com.example.a48900.ledsistem.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +31,8 @@ public class Main2Activity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseInstance;
     private String userId;
     private Date date;
+    String questionType;
+    PendingQuestion pendingQuestion = new PendingQuestion();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +72,30 @@ public class Main2Activity extends AppCompatActivity {
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // contoh kondisinya buat pindah layout
+//                objectmapper.(allrespon, PendingQuestion.class);
+//
+//                pendingQuestion.getQuestionType(response.getquestioType);
+//
+//                if(pendingQuestion.getQuestionType().equals("freetext")){
+//                    layoutfreetext
+//                }
+
                 String username = txt_username.getText().toString();
                 String password = txt_password.getText().toString();
                 String date = getCurrentDate();
+
+                //String answerType;
+                if ("freetext".equals(questionType)) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("username", txt_username.getText().toString());
+                    startActivity(intent);
+                } else {
+                    Intent i = new Intent(getApplicationContext(), Main3Activity.class);
+                    i.putExtra("username", txt_username.getText().toString());
+                    startActivity(i);
+                }
 
 
                 // Check for already existed userId
@@ -91,19 +115,8 @@ public class Main2Activity extends AppCompatActivity {
         if (TextUtils.isEmpty(userId)) {
             button_login.setText("Login");
 
-//            button_login.setOnClickListener(new Button.OnClickListener(){
-//                public void onClick(View v){
-//                    Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
-//                    Main2Activity.this.startActivity(intent);
-//                }
-//            });
         } else {
-//            button_login.setOnClickListener(new Button.OnClickListener(){
-//                public void onClick(View v){
-//                        Intent intent = new Intent(Main2Activity.this, Main2Activity.class);
-//                        Main2Activity.this.startActivity(intent);
-//                }
-//            });
+            //button_login.setText("Update");
         }
     }
     public String getCurrentDate(){
